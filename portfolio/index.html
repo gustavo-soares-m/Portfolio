@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" type="image/png" href="./images/favicon.png" />
+
+  <!-- Coloque o título do seu site aqui -->
+  <title>
+    Gustavo Soares Morais | Desenvolvedor Web Junior em [Sua Cidade], Brasil.
+  </title>
+
+  <meta name="description" content="Uma breve descrição sobre você.">
+  <!-- Adicione algumas palavras-chave de programação abaixo, Ex: (React, CSS etc) -->
+  <meta name="keywords" content="Seu nome, habilidades e algumas palavras-chave de programação" />
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+
+  <!-- ***** Cabeçalho ***** -->
+
+  <header class="header" role="banner" id="top">
+    <div class="row">
+      <nav class="nav" role="navigation">
+        <ul class="nav__items">
+          <li class="nav__item"><a href="#work" class="nav__link">Trabalhos</a></li>
+          <li class="nav__item">
+            <a href="#about" class="nav__link">Sobre</a>
+          </li>
+          <li class="nav__item">
+            <a href="#contact" class="nav__link">Contato</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="header__text-box row">
+      <div class="header__text">
+        <h1 class="heading-primary">
+          <!-- Substitua o nome abaixo pelo seu nome -->
+          <span>Gustavo Soares Morais</span>
+        </h1>
+        <!-- Coloque uma pequena descrição sobre você -->
+        <p>Desenvolvedor Web Junior - Imergente na Área de TI</p>
+        <a href="#contact" class="btn btn--pink">Entre em contato</a>
+      </div>
+    </div>
+  </header>
+
+  <main role="main">
+
+    <!-- ***** Trabalhos ***** -->
+
+    <section class="work" id="work">
+      <div class="row">
+        <h2>Meus Trabalhos</h2>
+        <div class="work__boxes">
+
+          <!-- Cada div com a classe work__box é um projeto. -->
+
+          <div class="work__box">
+            <div class="work__text">
+              <h3>COMBO AÇAÍ</h3>
+              <p>
+                Um simulador de cardapio de uma loja de açai, que calcula e entrega o valor total da compra.
+              </p>
+              <ul class="work__list">
+                <li>JavaScript</li>
+                <li>CSS</li>
+                <li>HTML</li>
+               
+              </ul>
+
+              <div class="work__links">
+                <a href="açai.html" target="_blank" class="link__text">
+                  Visitar Site <span>&rarr;</span>
+                </a>
+                <a href="açai.html" title="Ver Código Fonte" target="_blank">
+                  <img src="açai.png" class="work__code" alt="GitHub">
+                </a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <img src="açai.png" class="work__image" alt="Projeto 1" />
+            </div>
+          </div>
+
+          <div class="work__box">
+            <div class="work__text">
+              <h3>HAMBURGUERIA X-BÃO</h3>
+              <p>
+                Um simulador de cardapio que calcula e entrega o valor total da compra.
+              </p>
+              <ul class="work__list">
+                <li ><a href="HAMBURGUERIA X-BÃO/HAMBURGUERIA X-BÃO/cardapio2.html" class="link__text">Cardápio HAMBURGUERIA X-BÃO</a></li>
+              </ul>
+
+              <div class="work__links">
+                <a href="HAMBURGUERIA X-BÃO/HAMBURGUERIA X-BÃO/cardapio2.html" class="link__text">
+                  Visitar Site <span>&rarr;</span>
+                </a>
+                <a href="#">
+                  <img src="print_cardapio.png" class="work__code" title="Ver Código Fonte" alt="GitHub">
+                </a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <img src="print_cardapio.png" class="work__image" alt="Projeto 2" />
+            </div>
+          </div>
+
+          <div class="work__box">
+            <div class="work__text">
+              <h3>Sistema Cadastros Escola</h3>
+              <p>
+                Um sistema para cadastrar e vizualizar cadastros dos membros da escola.
+              </p>
+              <ul class="work__list">
+                <li>JavaScript</li>
+                <li>CSS</li>
+                <li>HTML</li>
+                <li>PHP</li>
+              </ul>
+
+              <div class="work__links">
+                <a href="Escola/Escola/Escola.html" class="link__text">
+                  Visitar Site <span>&rarr;</span>
+                </a>
+                <a href="Escola/Escola/Escola.html">
+                  <img src="printescola.png" class="work__code" title="Ver Código Fonte" alt="GitHub">
+                </a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <img src="printescola.png" class="work__image" alt="Projeto 3" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ***** Sobre ***** -->
+
+    <section class="about" id="about">
+      <div class="row">
+        <h2>Sobre Mim</h2>
+        <div class="about__content">
+          <div class="about__text">
+            <!-- Substitua o parágrafo abaixo por informações sobre você -->
+            <p>
+              Sou um desenvolvedor web júnior apaixonado por tecnologia e em constante aprendizado. 
+              Atualmente estou me especializando em desenvolvimento front-end com React e Next.js, 
+              mas também possuo conhecimentos em back-end com Node.js. Estou sempre buscando novos 
+              desafios para expandir meus conhecimentos e habilidades.
+            </p>
+            <!-- Forneça um link para seu currículo -->
+            <a href="#" class="btn">Meu Currículo</a>
+          </div>
+
+          <div class="about__photo-container">
+            <!-- Adicione uma boa foto sua -->
+            <img class="about__photo" src="perfil gustavo.jpg" alt="Gustavo Soares Morais" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ***** Contato ***** -->
+
+  <section class="contact" id="contact">
+    <div class="row">
+      <h2>Entre em Contato</h2>
+      <div class="contact__info">
+        <p>
+          Você está procurando um site rápido e fácil de usar para representar 
+          seu produto ou negócio? Ou precisa de algum tipo de consultoria? 
+          Quer fazer perguntas? Tem algum conselho para mim ou apenas quer dizer 
+          "Oi 👋"? Em qualquer caso, sinta-se à vontade para me avisar. Farei o 
+          possível para responder. 😊 A maneira mais rápida de entrar em contato 
+          comigo é por e-mail.
+        </p>
+        <!-- Substitua o e-mail pelo seu -->
+        <a href="mailto:gustavosaoresmorais@gmail.com" class="btn">gustavosaoresmorais@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ***** Rodapé ***** -->
+
+  <footer role="contentinfo" class="footer">
+    <div class="row">
+      <!-- Atualize os links para apontar para suas contas -->
+      <ul class="footer__social-links">
+        <li class="footer__social-link-item">
+          <a href="https://twitter.com/seuusuário/" title="Link para perfil no Twitter">
+            <img src="./images/twitter.svg" class="footer__social-image" alt="Twitter">
+          </a>
+        </li>
+        <li class="footer__social-link-item">
+          <a href="https://github.com/seuusuário/" title="Link para perfil no Github">
+            <img src="./images/github.svg" class="footer__social-image" alt="Github">
+          </a>
+        </li>
+        <li class="footer__social-link-item">
+          <a href="https://codepen.io/seuusuário" title="Link para perfil no Codepen">
+            <img src="./images/codepen.svg" class="footer__social-image" alt="Codepen">
+          </a>
+        </li>
+        <li class="footer__social-link-item">
+          <a href="https://www.linkedin.com/in/seuusuário/">
+            <img src="./images/linkedin.svg" title="Link para perfil no Linkedin" class="footer__social-image" alt="Linkedin">
+          </a>
+        </li>
+      </ul>
+
+      <!-- Se você me der algum crédito mantendo o parágrafo abaixo, será ótimo para mim 😊 Obrigado. -->
+      <p>
+        &copy; 2023 - Template desenvolvido por <a href="https://nisar.dev" class="link">Nisar</a> e adaptado por Gustavo Morais.
+      </p>
+      <div class="footer__github-buttons">
+        <iframe
+          src="https://ghbtns.com/github-btn.html?user=nisarhassan12&repo=portfolio-template&type=watch&count=true"
+          frameborder="0" scrolling="0" width="170" height="20" title="Ver Portfolio Template no GitHub">
+        </iframe>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#top" class="back-to-top" title="Voltar ao Topo">
+    <img src="./images/arrow-up.svg" alt="Voltar ao Topo" class="back-to-top__image"/>
+  </a>
+  <script src="./index.js"></script>
+</body>
+
+</html>

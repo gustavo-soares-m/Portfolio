@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Açaí Gourmet</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --roxo-primario: #6a1b9a;
+            --roxo-secundario: #9c27b0;
+            --roxo-claro: #ce93d8;
+            --branco: #ffffff;
+            --cinza-claro: #f8f9fa;
+        }
+        
+        body {
+            background-color: var(--cinza-claro);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+        
+        .title {
+            background: linear-gradient(135deg, var(--roxo-primario), var(--roxo-secundario));
+            color: var(--branco);
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .title p {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .container {
+            background-color: var(--branco);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        
+        .precos {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .preco-item {
+            background-color: var(--roxo-claro);
+            color: var(--roxo-primario);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            text-align: center;
+            min-width: 200px;
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        li {
+            background-color: var(--branco);
+            border-left: 4px solid var(--roxo-primario);
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 0 5px 5px 0;
+            transition: all 0.3s ease;
+            width: 100%;
+            justify-content: flex-end;
+        }
+        
+        li:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 8px rgba(106, 27, 154, 0.1);
+        }
+        
+        descricao {
+            display: block;
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        
+        input[type="number"] {
+            width: 100px;
+            padding: 5px;
+            border: 1px solid var(--roxo-claro);
+            border-radius: 4px;
+            margin-right: 10px;
+            text-align: center;
+        }
+        
+        input[type="number"]:focus {
+            outline: none;
+            border-color: var(--roxo-primario);
+            box-shadow: 0 0 0 2px rgba(106, 27, 154, 0.2);
+        }
+        
+        h2 {
+            color: var(--roxo-primario);
+            margin-top: 30px;
+            text-align: right;
+            border-top: 1px solid var(--roxo-claro);
+            padding-top: 15px;
+        }
+        
+        #total {
+            color: var(--roxo-secundario);
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        .btn-roxo {
+            background-color: var(--roxo-primario);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        
+        .btn-roxo:hover {
+            background-color: var(--roxo-secundario);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .precos {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .preco-item {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            
+            li {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="title">
+        <p>Rede de Açaí</p>
+    </div>
+    <div class="container">
+        <div class="precos">
+            <div class="preco-item">300ml - R$ 8,00</div>
+            <div class="preco-item">500ml - R$ 12,00</div>
+            <div class="preco-item">1 Litro - R$ 20,00</div>
+        </div>
+
+        <h4 class="mb-4" style="color: var(--roxo-primario);">Nossos Combos</h4>
+        
+        <ul class="row">
+            <div class="col-md-100">
+                <li>Ninho: 
+                    <input oninput="total()" type="number" id="ninho" min="0" placeholder="300ml">
+                    <input oninput="total()" type="number" id="ninho500" min="0" placeholder="500ml">
+                    <input oninput="total()" type="number" id="ninho1l" min="0" placeholder="1L">
+                    <descricao>Leite condensado, leite em pó, granola e banana.</descricao>
+                </li>
+                
+                <li>MOUSSE: 
+                    <input oninput="total()" type="number" id="mousse" min="0" placeholder="300ml">
+                    <input oninput="total()" type="number" id="mousse500" min="0" placeholder="500ml">
+                    <input oninput="total()" type="number" id="mousse1l" min="0" placeholder="1L">
+                    <descricao>Leite em pó, Mousse de morango, Morango e banana.</descricao>
+                </li>
+                
+                <li>MOUSSE 2: 
+                    <input oninput="total()" type="number" id="mousse2" min="0" placeholder="300ml">
+                    <input oninput="total()" type="number" id="mousse2500" min="0" placeholder="500ml">
+                    <input oninput="total()" type="number" id="mousse21l" min="0" placeholder="1L">
+                    <descricao>Mousse de maracujá, Banana e Leite em pó.</descricao>
+                </li>
+                
+                <li>OVOMALTINE 
+                    <input oninput="total()" type="number" id="ovomaltine" min="0" placeholder="300ml">
+                    <input oninput="total()" type="number" id="ovomaltine500" min="0" placeholder="500ml">
+                    <input oninput="total()" type="number" id="ovomaltine1l" min="0" placeholder="1L">
+                    <descricao>Leite em pó, Ovomaltine e Morango.</descricao>
+                </li>
+                
+                <li>GOTAS DE CHOCOLATE: 
+                    <input oninput="total()" type="number" id="gotas" min="0" placeholder="300ml">
+                    <input oninput="total()" type="number" id="gotas500" min="0" placeholder="500ml">
+                    <input oninput="total()" type="number" id="gotas1l" min="0" placeholder="1L">
+                    <descricao>Leite em pó, Leite condensado e Gotas de Chocolate.</descricao>
+                </li>
+            
+                <li>CHOCO KIDS: 
+                    <input oninput="total()" type="number" id="choco" min="0" placeholder="300ml">
+                    <input oninput="total()" type="number" id="choco500" min="0" placeholder="500ml">
+                    <input oninput="total()" type="number" id="choco1l" min="0" placeholder="1L">
+                    <descricao>Leite em pó, Confetes, Leite condensado e banana.</descricao>
+                </li>
+                
+                <li>NUCITA: 
+                    <input oninput="total()" type="number" id="nucita" min="0" placeholder="300ml">
+                    <input oninput="total()" type="number" id="nucita500" min="0" placeholder="500ml">
+                    <input oninput="total()" type="number" id="nucita1l" min="0" placeholder="1L">
+                    <descricao>Mousse de morango, Nutella e Raspas de Chocolate.</descricao>
+                </li>
+                
+                <li>BIS: 
+                    <input oninput="total()" type="number" id="bis" min="0" placeholder="300ml">
+                    <input oninput="total()" type="number" id="bis500" min="0" placeholder="500ml">
+                    <input oninput="total()" type="number" id="bis1l" min="0" placeholder="1L">
+                    <descricao>Confetes, Bis e Leite condensado.</descricao>
+                </li>
+                
+                <li>KI DELÍCIA: 
+                    <input oninput="total()" type="number" id="kidlc" min="0" placeholder="300ml">
+                    <input oninput="total()" type="number" id="kidlc500" min="0" placeholder="500ml">
+                    <input oninput="total()" type="number" id="kidlc1l" min="0" placeholder="1L">
+                    <descricao>Leite em pó, Leite condensado, Nutella e Banana.</descricao>
+                </li>
+                
+                <li>FITNESS: 
+                    <input oninput="total()" type="number" id="fitness" min="0" placeholder="300ml">
+                    <input oninput="total()" type="number" id="fitness500" min="0" placeholder="500ml">
+                    <input oninput="total()" type="number" id="fitness1l" min="0" placeholder="1L">
+                    <descricao>Banana, Morango, Kiwi e Granola.</descricao>
+                </li>
+                
+                <li>CREME DE CUPUAÇU: 
+                    <input oninput="total()" type="number" id="creme" min="0" placeholder="300ml">
+                    <input oninput="total()" type="number" id="creme500" min="0" placeholder="500ml">
+                    <input oninput="total()" type="number" id="creme1l" min="0" placeholder="1L">
+                    <descricao>Leite condensado, Cupuaçu, leite em pó e banana.</descricao>
+                </li>
+                
+                <li>CASADINHO: 
+                    <input oninput="total()" type="number" id="casadinho" min="0" placeholder="300ml">
+                    <input oninput="total()" type="number" id="casadinho500" min="0" placeholder="500ml">
+                    <input oninput="total()" type="number" id="casadinho1l" min="0" placeholder="1L">
+                    <descricao>Cupuaçu, leite em pó, leite condensado e banana.</descricao>
+                </li>
+            </div>
+        </ul>
+
+        <h2>Total: <span id="total">0.00</span></h2>
+        
+        <div class="d-flex justify-content-end mt-4">
+            <button class="btn btn-roxo" onclick="finalizarPedido()">Finalizar Pedido</button>
+        </div>
+    </div>
+
+    <script>
+        function total() {
+            var ninho= 0; 
+            var ninho500= 0;
+            var ninho1l= 0;
+            var mousse= 0;
+            var mousse500= 0;
+            var mousse1l= 0;
+            var mousse2= 0;
+            var mousse2500= 0;
+            var mousse21l= 0;
+            var ovomaltine= 0;
+            var ovomaltine500= 0;
+            var ovomaltine1l= 0;
+            var gotas= 0;
+            var gotas500= 0;
+            var gotas1l= 0;
+            var choco= 0;
+            var choco500= 0;
+            var choco1l= 0;
+            var nucita= 0;
+            var nucita500= 0;
+            var nucita1l= 0;
+            var bis= 0;
+            var bis500= 0;
+            var bis1l= 0;
+            var kidlc= 0;
+            var kidlc500= 0;
+            var kidlc1l= 0;
+            var fitness= 0;
+            var fitness500= 0;
+            var fitness1l= 0;
+            var creme= 0;
+            var creme500= 0;
+            var creme1l= 0;
+            var casadinho= 0;
+            var casadinho500= 0;
+            var casadinho1l= 0;
+            var soma = 0;
+
+            soma += (parseFloat(document.getElementById("ninho").value) || 0) * 8.0;
+            soma += (parseFloat(document.getElementById("ninho500").value) || 0) * 12.0;
+            soma += (parseFloat(document.getElementById("ninho1l").value) || 0) * 20.0;
+            soma += (parseFloat(document.getElementById("mousse").value) || 0) * 8.0;
+            soma += (parseFloat(document.getElementById("mousse500").value) || 0) * 12.0;
+            soma += (parseFloat(document.getElementById("mousse1l").value) || 0) * 20.0;
+            soma += (parseFloat(document.getElementById("mousse2").value) || 0) * 8.0;
+            soma += (parseFloat(document.getElementById("mousse2500").value) || 0) * 12.0;
+            soma += (parseFloat(document.getElementById("mousse21l").value) || 0) * 20.0;
+            soma += (parseFloat(document.getElementById("ovomaltine").value) || 0) * 8.0;
+            soma += (parseFloat(document.getElementById("ovomaltine500").value) || 0) * 12.0;
+            soma += (parseFloat(document.getElementById("ovomaltine1l").value) || 0) * 20.0;
+            soma += (parseFloat(document.getElementById("gotas").value) || 0) * 8.0;
+            soma += (parseFloat(document.getElementById("gotas500").value) || 0) * 12.0;
+            soma += (parseFloat(document.getElementById("gotas1l").value) || 0) * 20.0;
+            soma += (parseFloat(document.getElementById("choco").value) || 0) * 8.0;
+            soma += (parseFloat(document.getElementById("choco500").value) || 0) * 12.0;
+            soma += (parseFloat(document.getElementById("choco1l").value) || 0) * 20.0;
+            soma += (parseFloat(document.getElementById("nucita").value) || 0) * 8.0;
+            soma += (parseFloat(document.getElementById("nucita500").value) || 0) * 12.0;
+            soma += (parseFloat(document.getElementById("nucita1l").value) || 0) * 20.0;
+            soma += (parseFloat(document.getElementById("bis").value) || 0) * 8.0;
+            soma += (parseFloat(document.getElementById("bis500").value) || 0) * 12.0;
+            soma += (parseFloat(document.getElementById("bis1l").value) || 0) * 20.0;
+            soma += (parseFloat(document.getElementById("kidlc").value) || 0) * 8.0;
+            soma += (parseFloat(document.getElementById("kidlc500").value) || 0) * 12.0;
+            soma += (parseFloat(document.getElementById("kidlc1l").value) || 0) * 20.0;
+            soma += (parseFloat(document.getElementById("fitness").value) || 0) * 8.0;
+            soma += (parseFloat(document.getElementById("fitness500").value) || 0) * 12.0;
+            soma += (parseFloat(document.getElementById("fitness1l").value) || 0) * 20.0;
+            soma += (parseFloat(document.getElementById("creme").value) || 0) * 8.0;
+            soma += (parseFloat(document.getElementById("creme500").value) || 0) * 12.0;
+            soma += (parseFloat(document.getElementById("creme1l").value) || 0) * 20.0;
+            soma += (parseFloat(document.getElementById("casadinho").value) || 0) * 8.0;
+            soma += (parseFloat(document.getElementById("casadinho500").value) || 0) * 12.0;
+            soma += (parseFloat(document.getElementById("casadinho1l").value) || 0) * 20.0;
+
+            var valor = 0;
+            var totalvalor = soma + valor;
+
+            document.getElementById("total").textContent =  totalvalor.toFixed(2);
+        }
+        
+    </script>
+</body>
+</html>
