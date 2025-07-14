@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAMBURGUERIA X-BÃO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body {
+        
+        background-image: url('background.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+        color: white;
+        min-height: 100vh;
+      }
+      
+      .navbar {
+        background-color: #000 !important;
+        border-bottom: 2px solid #FF8C00;
+      }
+      
+      .navbar-brand {
+        color: #FF8C00 !important;
+        font-weight: bold;
+        font-size: 1.8rem;
+        text-shadow: 1px 1px 2px #000;
+      }
+      
+      .card {
+        background-color: rgba(0, 0, 0, 0.8);
+        border: 1px solid #FF8C00;
+        margin-bottom: 20px;
+        color: white;
+      }
+      
+      .card-header {
+        background-color: #FF8C00;
+        color: black;
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+      
+      .list-group-item {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        border-color: #333;
+      }
+      
+      input[type="number"] {
+        background-color: #333;
+        color: white;
+        border: 1px solid #FF8C00;
+      }
+      
+      .btn-outline-success {
+        color: #FF8C00;
+        border-color: #FF8C00;
+      }
+      
+      .btn-outline-success:hover {
+        background-color: #FF8C00;
+        color: black;
+      }
+      
+      #Soma, #desconto, #valorpagar {
+        font-weight: bold;
+        color: #FF8C00;
+        font-size: 1.2rem;
+      }
+      
+      form {
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 15px;
+        border-radius: 5px;
+        border: 1px solid #FF8C00;
+      }
+      
+      label[for^="opcao"] {
+        color: white;
+      }
+      
+      input[type="radio"]:checked + label {
+        color: #FF8C00;
+        font-weight: bold;
+      }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">HAMBURGUERIA X-BÃO</a>
+        </div>
+    </nav>
+
+    <div class="container text-center py-4">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                  HAMBURGUER PADRÃO
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">X-Bacon - R$15,90<br>HAMBURGUER, PRESUNTO, MUÇARELA E BACON 
+                  <input class="form-control mt-2" oninput="Somar()" type="number" id="x_bacon" min="0">
+                    <input class="form-check-input" type="radio" id="adicional1" name="adicional1" value="5" oninput="Somar()">
+                    <label class="form-check-label" for="adicional_bacon1">Adicional Bacon (+R$5,00)</label>
+                    <input class="form-check-input" type="radio" id="semadicional" name="adicional1" value="0" checked oninput="Somar()">
+                    <label class="form-check-label" for="semadicional">Sem adicional</label>
+                  </li>
+
+                  <li class="list-group-item">X-Salada - R$16,90<br>ALFACE, TOMATE, HAMBURGUER, PRESUNTO, MUÇARELA E BACON  
+                  <input class="form-control mt-2" oninput="Somar()" type="number" id="x_salada" min="0">
+                  <input class="form-check-input" type="radio" id="adicional2" name="adicional2" value="5" oninput="Somar()">
+                  <label class="form-check-label" for="adicional_bacon2">Adicional Bacon (+R$5,00)</label>
+                  <input class="form-check-input" type="radio" id="semadicional" name="adicional2" value="0" checked oninput="Somar()">
+                  <label class="form-check-label" for="semadicional">Sem adicional</label>
+                  </li>
+  
+                  <li class="list-group-item">X-Tudo - R$17,90<br>HAMBURGUER, PRESUNTO, MUÇARELA, SALADA, SALSICHA E OVO 
+                  <input class="form-control mt-2" oninput="Somar()" type="number" id="x_tudo" min="0"></li>
+  
+                  <li class="list-group-item">X-Completo - R$24,90<br>2 HAMBURGUERES, PRESUNTO, MUÇARELA, SALADA, SALSICHA E OVO 
+                  <input class="form-control mt-2" oninput="Somar()" type="number" id="x_completo" min="0"></li>
+                </ul>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header">
+                  HAMBURGUER ARTESANAL 150GR
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">X-Bacon - R$22,90<br>HAMBURGUER PRESUNTO, MUÇARELA E BACON 
+                    <input class="form-control mt-2" oninput="Somar()" type="number" id="x_bacon150" min="0">
+                    <input class="form-check-input" type="radio" id="adicional3" name="adicional3" value="5" oninput="Somar()">
+                    <label class="form-check-label" for="adicional_bacon3">Adicional Bacon (+R$5,00)</label>
+                    <input class="form-check-input" type="radio" id="semadicional" name="adicional3" value="0" checked oninput="Somar()">
+                    <label class="form-check-label" for="semadicional">Sem adicional</label>
+                    </li>
+  
+                  <li class="list-group-item">X-Salada - R$20,90<br>ALFACE, TOMATE, HAMBURGUER, PRESUNTO, MUÇARELA E BACON 
+                    <input class="form-control mt-2" oninput="Somar()" type="number" id="x_salada150" min="0">
+                    <input class="form-check-input" type="radio" id="adicional4" name="adicional4" value="5" oninput="Somar()">
+                    <label class="form-check-label" for="adicional_bacon4">Adicional Bacon (+R$5,00)</label>
+                    <input class="form-check-input" type="radio" id="semadicional" name="adicional4" value="0" checked oninput="Somar()">
+                    <label class="form-check-label" for="semadicional">Sem adicional</label>
+                    </li>
+  
+                  <li class="list-group-item">X-Tudo - R$25,90<br>HAMBURGUER, PRESUNTO, MUÇARELA, SALADA, SALSICHA, OVO E MILHO 
+                    <input class="form-control mt-2" oninput="Somar()" type="number" id="x_tudo150" min="0"></li>
+  
+                  <li class="list-group-item">X-Completo - R$28,90<br>2 HAMBURGUERES, PRESUNTO, MUÇARELA, SALADA, SALSICHA, OVO E MILHO 
+                    <input class="form-control mt-2" oninput="Somar()" type="number" id="x_completo150" min="0"></li>
+                </ul>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header">
+                  LANCHES COM FILÉ
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Filé Bacon - R$17,90<br>FILE, BACON, MUÇARELA E SALADA 
+                    <input class="form-control mt-2" oninput="Somar()" type="number" id="file_bacon" min="0">
+                    <input class="form-check-input" type="radio" id="adicional5" name="adicional5" value="5" oninput="Somar()">
+                    <label class="form-check-label" for="adicional_bacon5">Adicional Bacon (+R$5,00)</label>
+                    <input class="form-check-input" type="radio" id="semadicional" name="adicional5" value="0" checked oninput="Somar()">
+                    <label class="form-check-label" for="semadicional">Sem adicional</label>
+                    </li>
+  
+                  <li class="list-group-item">Filé Salada - R$19,90<br>FILE, SALADA, MUÇARELA E MILHO 
+                    <input class="form-control mt-2" oninput="Somar()" type="number" id="file_salada" min="0"></li>
+  
+                  <li class="list-group-item">Filé Tudo - R$20,90<br>FILEMUÇARELA, MILHO, SALSICHA, OVO E SALADA 
+                    <input class="form-control mt-2" oninput="Somar()" type="number" id="file_tudo" min="0"></li>
+  
+                  <li class="list-group-item">Filé Completo - R$28,90<br>DOBRO DE FILE, PRESUNTO, MUÇARELA, SALADA, SALSICHA, OVO E MILHO 
+                    <input class="form-control mt-2" oninput="Somar()" type="number" id="file_completo" min="0"></li>
+                </ul>
+            </div>
+          </div>
+          
+          <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                  LANCHES COM FRANGO
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Frango bacon - R$15,90<br>FRANGO, BACON, MUÇARELA E SALADA 
+                    <input class="form-control mt-2" oninput="Somar()" type="number" id="frango_bacon" min="0">
+                    <input class="form-check-input" type="radio" id="adicional6" name="adicional6" value="5" oninput="Somar()">
+                    <label class="form-check-label" for="adicional_bacon6">Adicional Bacon (+R$5,00)</label>
+                    <input class="form-check-input" type="radio" id="semadicional" name="adicional6" value="0" checked oninput="Somar()">
+                    <label class="form-check-label" for="semadicional">Sem adicional</label>
+                    </li>
+  
+                  <li class="list-group-item">Frango salada - R$16,90<br>FRANGO, SALADA, MUÇARELA E MILHO 
+                    <input class="form-control mt-2" oninput="Somar()" type="number" id="frango_salada" min="0"></li>
+  
+                  <li class="list-group-item">Frango tudo - R$17,90<br>FRANGO, MUÇARELA, MILHO, SALSICHA, OVO E SALADA 
+                    <input class="form-control mt-2" oninput="Somar()" type="number" id="frango_tudo" min="0"></li>
+  
+                  <li class="list-group-item">Frango completo - R$24,90<br>DOBRO DE FRANGO, PRESUNTO, MUÇARELA, SALADA, SALSICHA E OVO 
+                    <input class="form-control mt-2" oninput="Somar()" type="number" id="frango_completo" min="0"></li>
+                </ul>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header">
+                  LANCHES COM LOMBO
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Lombo bacon - R$15,90<br>LOMBO, BACON, MUÇARELA E SALADA 
+                    <input class="form-control mt-2" oninput="Somar()" type="number" id="lombo_bacon" min="0">
+                    <input class="form-check-input" type="checkbox" id="adicional7" name="adicional7" value="5" oninput="Somar()">
+                    <label class="form-check-label" for="adicional_bacon7">Adicional Bacon (+R$5,00)</label>
+                    <input class="form-check-input" type="checkbox" id="semadicional" name="adicional7" value="0" checked oninput="Somar()" checked>
+                    <label class="form-check-label" for="semadicional">Sem adicional</label>
+                    </li>
+  
+                  <li class="list-group-item">Lombo salada - R$16,90<br>LOMBO, SALADA, MUÇARELA E MILHO 
+                    <input class="form-control mt-2" oninput="Somar()" type="number" id="lombo_salada" min="0"></li>
+  
+                  <li class="list-group-item">Lombo tudo - R$17,90<br>LOMBO, MUÇARELA, MILHO, SALSICHA, OVO E SALADA 
+                    <input class="form-control mt-2" oninput="Somar()" type="number" id="lombo_tudo" min="0"></li>
+  
+                  <li class="list-group-item">Lombo completo - R$24,90<br>DOBRO DE LOMBO, PRESUNTO, MUÇARELA, SALADA, SALSICHA E OVO 
+                    <input class="form-control mt-2" oninput="Somar()" type="number" id="lombo_completo" min="0"></li>
+                </ul>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header">
+                  ACOMPANHAMENTOS E BEBIDAS
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Batata frita pequena - R$8,90 
+                    <input class="form-control mt-2" oninput="Somar()" type="number" id="batata_pequena" min="0"></li>
+  
+                  <li class="list-group-item">Batata frita grande - R$12,90 
+                    <input class="form-control mt-2" oninput="Somar()" type="number" id="batada_grande" min="0"></li>
+  
+                  <li class="list-group-item">Refrigerante litro - R$7,90 
+                    <input class="form-control mt-2" oninput="Somar()" type="number" id="refri_litro" min="0"></li>
+  
+                  <li class="list-group-item">Refrigerante lata - R$3,90 
+                    <input class="form-control mt-2" oninput="Somar()" type="number" id="refri_lata" min="0"></li>
+  
+                  <li class="list-group-item">Cerveja Lata - R$6,90 
+                    <input class="form-control mt-2" oninput="Somar()" type="number" id="cerveja" min="0"></li>
+  
+                  <li class="list-group-item">Molho de alho - R$1,90 
+                    <input class="form-control mt-2" oninput="Somar()" type="number" id="molho_alho" min="0"></li>
+
+                  <li class="list-group-item">Molho da casa - R$1,90 
+                    <input class="form-control mt-2" oninput="Somar()" type="number" id="molho_casa" min="0"></li>
+                </ul>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card bg-dark">
+              <div class="card-header bg-warning text-dark">
+                PEDIDO
+              </div>
+              <div class="card-body">
+                <div class="mb-3">
+                  <label class="form-label">Número da mesa:</label>
+                  <input type="number" class="form-control bg-dark text-white" min="1">
+                </div>
+                
+                <div class="mb-3">
+                  <label class="form-label">Total: R$</label>
+                  <span id="Soma" class="fs-4">0.00</span>
+                </div>
+                
+                <div class="mb-3">
+                  <label class="form-label">Forma de pagamento:</label>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" id="credito" name="pagamento" value="credito" checked onclick="Somar()">
+                    <label class="form-check-label" for="credito">Crédito (5% de desconto)</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" id="debito" name="pagamento" value="debito" onclick="Somar()">
+                    <label class="form-check-label" for="debito">Débito (10% de desconto)</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" id="dinheiro" name="pagamento" value="dinheiro" onclick="Somar()">
+                    <label class="form-check-label" for="dinheiro">Dinheiro/Pix (15% de desconto)</label>
+                  </div>
+                  <label class="form-label">Metodo de Entrega:</label>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" id="entrega" name="metentrega" value="entrega" checked oninput="Somar()">
+                    <label class="form-check-label" for="credito">Entrega</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" id="retirada" name="metentrega" value="retirada" oninput="Somar()">
+                    <label class="form-check-label" for="retirada">Retirada</label>
+                  </div>
+                </div>
+                
+                <div class="mb-3">
+                  <label class="form-label">Desconto: R$</label>
+                  <span id="desconto" class="fs-5">0.00</span>
+                </div>
+                
+                <div class="mb-3">
+                  <label class="form-label">Valor a pagar: R$</label>
+                  <span id="valorpagar" class="fs-4 fw-bold">0.00</span>
+                </div>
+                
+                <button type="button" class="btn btn-warning me-2" onclick="Somar()">Calcular</button>
+                <button type="button" class="btn btn-success" onclick="Finalizar()">Finalizar Pedido</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <script>
+    function Somar() {
+        var soma = 0;
+        var desconto = 0;
+        var valorpagar = 0;
+        var entrega = 0;
+        var adicional = 0;
+        
+        
+        // Hamburguer Padrão
+        soma += document.getElementById("x_bacon").value ? parseFloat(document.getElementById("x_bacon").value) * 15.9 : 0;
+        soma += document.getElementById("x_salada").value ? parseFloat(document.getElementById("x_salada").value) * 16.9 : 0;
+        soma += document.getElementById("x_tudo").value ? parseFloat(document.getElementById("x_tudo").value) * 17.9 : 0;
+        soma += document.getElementById("x_completo").value ? parseFloat(document.getElementById("x_completo").value) * 24.9 : 0;
+        
+        // Hamburguer Artesanal 150g
+        soma += document.getElementById("x_bacon150").value ? parseFloat(document.getElementById("x_bacon150").value) * 22.9 : 0;
+        soma += document.getElementById("x_salada150").value ? parseFloat(document.getElementById("x_salada150").value) * 20.9 : 0;
+        soma += document.getElementById("x_tudo150").value ? parseFloat(document.getElementById("x_tudo150").value) * 25.9 : 0;
+        soma += document.getElementById("x_completo150").value ? parseFloat(document.getElementById("x_completo150").value) * 28.9 : 0;
+        
+        // Lanches com Filé
+        soma += document.getElementById("file_bacon").value ? parseFloat(document.getElementById("file_bacon").value) * 17.9 : 0;
+        soma += document.getElementById("file_salada").value ? parseFloat(document.getElementById("file_salada").value) * 19.9 : 0;
+        soma += document.getElementById("file_tudo").value ? parseFloat(document.getElementById("file_tudo").value) * 20.9 : 0;
+        soma += document.getElementById("file_completo").value ? parseFloat(document.getElementById("file_completo").value) * 28.9 : 0;
+        
+        // Lanches com Frango
+        soma += document.getElementById("frango_bacon").value ? parseFloat(document.getElementById("frango_bacon").value) * 15.9 : 0;
+        soma += document.getElementById("frango_salada").value ? parseFloat(document.getElementById("frango_salada").value) * 16.9 : 0;
+        soma += document.getElementById("frango_tudo").value ? parseFloat(document.getElementById("frango_tudo").value) * 17.9 : 0;
+        soma += document.getElementById("frango_completo").value ? parseFloat(document.getElementById("frango_completo").value) * 24.9 : 0;
+        
+        // Lanches com Lombo
+        soma += document.getElementById("lombo_bacon").value ? parseFloat(document.getElementById("lombo_bacon").value) * 15.9 : 0;
+        soma += document.getElementById("lombo_salada").value ? parseFloat(document.getElementById("lombo_salada").value) * 16.9 : 0;
+        soma += document.getElementById("lombo_tudo").value ? parseFloat(document.getElementById("lombo_tudo").value) * 17.9 : 0;
+        soma += document.getElementById("lombo_completo").value ? parseFloat(document.getElementById("lombo_completo").value) * 24.9 : 0;
+        
+        // Acompanhamentos e Bebidas
+        soma += document.getElementById("batata_pequena").value ? parseFloat(document.getElementById("batata_pequena").value) * 8.9 : 0;
+        soma += document.getElementById("batada_grande").value ? parseFloat(document.getElementById("batada_grande").value) * 12.9 : 0;
+        soma += document.getElementById("refri_litro").value ? parseFloat(document.getElementById("refri_litro").value) * 7.9 : 0;
+        soma += document.getElementById("refri_lata").value ? parseFloat(document.getElementById("refri_lata").value) * 3.9 : 0;
+        soma += document.getElementById("cerveja").value ? parseFloat(document.getElementById("cerveja").value) * 6.9 : 0;
+        soma += document.getElementById("molho_alho").value ? parseFloat(document.getElementById("molho_alho").value) * 1.9 : 0;
+        soma += document.getElementById("molho_casa").value ? parseFloat(document.getElementById("molho_casa").value) * 1.9 : 0;
+        
+        for (let i = 1; i <= 7; i++) {
+        // Verifica se o adicional está marcado
+        const adicionalElement = document.getElementById("adicional" + i);
+        if (adicionalElement && adicionalElement.checked && adicionalElement.value === "5") {
+            // Encontra o campo de quantidade correspondente
+            let qtdElement;
+            if (i <= 2) {
+                qtdElement = document.getElementById(i === 1 ? "x_bacon" : "x_salada");
+            } else if (i <= 4) {
+                qtdElement = document.getElementById(i === 3 ? "x_bacon150" : "x_salada150");
+            } else if (i === 5) {
+                qtdElement = document.getElementById("file_bacon");
+            } else if (i === 6) {
+                qtdElement = document.getElementById("frango_bacon");
+            } else if (i === 7) {
+                qtdElement = document.getElementById("lombo_bacon");
+            }
+            
+            // Adiciona R$5,00 por cada item
+            const qtd = qtdElement ? parseFloat(qtdElement.value) || 0 : 0;
+            adicional += qtd * 5;
+        }
+    }
+
+        // Calcular desconto
+        if(document.getElementById("credito").checked) {
+            desconto = soma * 0.05;
+        } else if (document.getElementById("debito").checked) {
+            desconto = soma * 0.10;
+        } else if (document.getElementById("dinheiro").checked) {
+            desconto = soma * 0.15;
+        }
+        
+        // Calcular taxa de entrega
+        if(document.getElementById("entrega").checked) {
+            entrega = 7.00;
+        }
+        
+        valorpagar = soma - desconto + entrega + adicional;
+        
+        // Exibir resultados formatados
+        document.getElementById("Soma").textContent = soma.toFixed(2);
+        document.getElementById("desconto").textContent = desconto.toFixed(2);
+        document.getElementById("valorpagar").textContent = valorpagar.toFixed(2);
+    }
+    
+    function Finalizar() {
+        alert("Pedido enviado com sucesso!");
+    }
+    </script>
+
+</body>
+</html>
